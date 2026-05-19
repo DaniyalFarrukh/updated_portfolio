@@ -122,6 +122,20 @@ const Index: React.FC = () => {
       badgeUrl: "https://www.credly.com/badges/6e4ed897-a8c3-4645-9dc1-0102d34d48df/print",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     },
+    {
+      title: "Claude Code in Action",
+      issuer: "Anthropic",
+      description: "Hands-on certification demonstrating proficiency with Claude Code for agentic AI-assisted software development.",
+      badgeUrl: "https://verify.skilljar.com/c/rfzg7c42rkcb",
+      icon: "/c.png",
+    },
+    {
+      title: "AI Fluency Framework & Foundations",
+      issuer: "Anthropic",
+      description: "Certificate of Completion covering core AI concepts, large language model foundations, and practical AI fluency.",
+      badgeUrl: "https://verify.skilljar.com/c/mrx4bx5gt8p6",
+      icon: "/c.png",
+    },
   ];
 
   const skills = [
@@ -190,258 +204,409 @@ const Index: React.FC = () => {
                 </Button>
               </div>
 
-          <div className="flex gap-4">
-            {socials.map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -5 }}
-                className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-colors"
-              >
-                <social.icon size={20} />
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
+              <div className="flex gap-4">
+                {socials.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ y: -5 }}
+                    className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-colors"
+                  >
+                    <social.icon size={20} />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
 
-        {/* RIGHT */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative flex justify-end items-center pr-0 lg:pr-8"
-        >
-          <div ref={photoRef} className="relative w-96 h-96">
+            {/* RIGHT */}
             <motion.div
-              className="absolute inset-0 rounded-full"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              style={{ background: "conic-gradient(from 0deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)), hsl(var(--primary)))" }}
-            />
-            <motion.div
-              className="absolute -inset-3 rounded-full opacity-50"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              style={{ background: "conic-gradient(from 90deg, hsl(var(--accent)), hsl(var(--primary)), transparent)", filter: "blur(8px)" }}
-            />
-            <motion.div
-              className="absolute -inset-4 rounded-full"
-              animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.6, 0.3] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              style={{ background: "radial-gradient(circle, hsl(var(--primary) / 0.4) 0%, transparent 70%)" }}
-            />
-            <div className="absolute inset-2 bg-background rounded-full overflow-hidden z-10">
-              <img
-                src="/lovable-uploads/a0028102-d6c3-458e-8a6a-2bdc0f8bfee5.png"
-                alt="Daniyal Farrukh"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-              />
-            </div>
-          </div>
-        </motion.div>
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative flex justify-end items-center pr-0 lg:pr-8"
+            >
+              <div ref={photoRef} className="relative w-96 h-96">
+                <motion.div
+                  className="absolute inset-0 rounded-full"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                  style={{ background: "conic-gradient(from 0deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)), hsl(var(--primary)))" }}
+                />
+                <motion.div
+                  className="absolute -inset-3 rounded-full opacity-50"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  style={{ background: "conic-gradient(from 90deg, hsl(var(--accent)), hsl(var(--primary)), transparent)", filter: "blur(8px)" }}
+                />
+                <motion.div
+                  className="absolute -inset-4 rounded-full"
+                  animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.6, 0.3] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  style={{ background: "radial-gradient(circle, hsl(var(--primary) / 0.4) 0%, transparent 70%)" }}
+                />
+                <div className="absolute inset-2 bg-background rounded-full overflow-hidden z-10">
+                  <img
+                    src="/lovable-uploads/a0028102-d6c3-458e-8a6a-2bdc0f8bfee5.png"
+                    alt="Daniyal Farrukh"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </motion.div>
 
-        </div>
+          </div>
         </div>
       </section>
 
-  {/* STATS */}
-  <AnimatedStats />
+      {/* STATS */}
+      <AnimatedStats />
 
-  {/* SERVICES + ABOUT */}
-  <section id="services" className="py-20 bg-card/30">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="grid lg:grid-cols-2 gap-12">
+      {/* SERVICES + ABOUT */}
+      <section id="services" className="py-20 bg-card/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12">
 
-        <motion.div
-          className="space-y-6"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {skills.map((skill, index) => (
             <motion.div
-              key={index}
-              variants={staggerItem}
-              whileHover={{ x: 10 }}
-              className="flex items-start gap-4 p-6 bg-card border border-border rounded-xl hover:border-primary transition-all duration-300 group cursor-pointer"
+              className="space-y-6"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <skill.icon className="text-primary" size={24} />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{skill.title}</h3>
-                <p className="text-muted-foreground mt-2">{skill.description}</p>
-              </div>
-              <ChevronRight className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          id="about"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-8"
-        >
-          <div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              About <span className="gradient-text">me</span>
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              As a BSCS graduate, I develop modern web applications, apply strong Software Quality
-              Assurance principles, and bring hands-on experience in Data Quality Control to ensure
-              reliable and high-performing solutions and have hands on experience using AWS Services.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <motion.div
-              whileHover={{ x: 5 }}
-              className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <GraduationCap className="text-primary" size={24} />
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold">BSCS - University of Central Punjab</h4>
-                <p className="text-muted-foreground">Graduated in 2025</p>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-
-      </div>
-    </div>
-  </section>
-
-  <SkillsSection />
-
-{/* PROJECTS */}
-<section id="projects" className="py-20">
-  <div className="max-w-7xl mx-auto px-6">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="text-center mb-16"
-    >
-      <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-        Featured <span className="gradient-text">Projects</span>
-      </h2>
-      <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-        Explore my latest work showcasing web development and creative projects
-      </p>
-    </motion.div>
-
-    <motion.div
-      className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      {projects.map((project, index) => (
-        <motion.div key={index} variants={staggerItem}>
-          <TiltCard className="h-full">
-            <Card className="bg-card border-border overflow-hidden hover:border-primary transition-all duration-500 group h-full">
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="secondary">{tag}</Badge>
-                  ))}
-                </div>
-                <Button asChild size="sm" className="w-full">
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    {project.isYoutube ? (
-                      <Youtube size={16} className="mr-2" />
-                    ) : (
-                      <ExternalLink size={16} className="mr-2" />
-                    )}
-                    {project.isYoutube ? "YouTube" : "Live Demo"}
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </TiltCard>
-        </motion.div>
-      ))}
-    </motion.div>
-  </div>
-</section>
-
-{/* CERTIFICATIONS */}
-<section id="certifications" className="py-20 bg-card/30">
-  <div className="max-w-7xl mx-auto px-6">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="mb-12"
-    >
-      <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-        Certifi<span className="gradient-text">cations</span>
-      </h2>
-      <p className="text-muted-foreground text-lg">
-        Professional certifications validating my technical expertise
-      </p>
-    </motion.div>
-
-    <motion.div
-      className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      {certifications.map((cert, index) => (
-        <motion.div key={index} variants={staggerItem} whileHover={{ y: -5 }}>
-          <Card className="bg-card border-border hover:border-primary transition-all duration-300 group h-full">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-14 h-14 bg-muted rounded-xl flex items-center justify-center flex-shrink-0 p-2">
-                  <img src={cert.icon} alt={cert.issuer} className="w-full h-full object-contain" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold group-hover:text-primary transition-colors leading-tight">{cert.title}</h3>
-                  <p className="text-muted-foreground text-sm mt-1">{cert.issuer}</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground text-sm mb-5 leading-relaxed">{cert.description}</p>
-              <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full">
-                <a
-                  href={cert.badgeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
+              {skills.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  variants={staggerItem}
+                  whileHover={{ x: 10 }}
+                  className="flex items-start gap-4 p-6 bg-card border border-border rounded-xl hover:border-primary transition-all duration-300 group cursor-pointer"
                 >
-                  <Shield size={16} />
-                  View Certificate
-                  <ExternalLink size={14} className="ml-auto" />
-                </a>
-              </Button>
-          </CardContent>
-        </Card>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <skill.icon className="text-primary" size={24} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{skill.title}</h3>
+                    <p className="text-muted-foreground mt-2">{skill.description}</p>
+                  </div>
+                  <ChevronRight className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              id="about"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div>
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                  About <span className="gradient-text">me</span>
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  As a BSCS graduate, I develop modern web applications, apply strong Software Quality
+                  Assurance principles, and bring hands-on experience in Data Quality Control to ensure
+                  reliable and high-performing solutions and have hands on experience using AWS Services.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg"
+                >
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <GraduationCap className="text-primary" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold">BSCS - University of Central Punjab</h4>
+                    <p className="text-muted-foreground">Graduated in 2025</p>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      <SkillsSection />
+
+      {/* PROJECTS */}
+      <section id="projects" className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Featured <span className="gradient-text">Projects</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Explore my latest work showcasing web development and creative projects
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {projects.map((project, index) => (
+              <motion.div key={index} variants={staggerItem}>
+                <TiltCard className="h-full">
+                  <Card className="bg-card border-border overflow-hidden hover:border-primary transition-all duration-500 group h-full">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                    </div>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                      <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tags.map((tag, tagIndex) => (
+                          <Badge key={tagIndex} variant="secondary">{tag}</Badge>
+                        ))}
+                      </div>
+                      <Button asChild size="sm" className="w-full">
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          {project.isYoutube ? (
+                            <Youtube size={16} className="mr-2" />
+                          ) : (
+                            <ExternalLink size={16} className="mr-2" />
+                          )}
+                          {project.isYoutube ? "YouTube" : "Live Demo"}
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </TiltCard>
               </motion.div>
             ))}
-    </motion.div>
-  </div>
-</section>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* AI & DEVOPS PROJECTS */}
+      <section id="ai-devops-projects" className="py-20 bg-card/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              AI & <span className="gradient-text">DevOps</span> Projects
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Hands-on AI and DevOps projects spanning local LLMs, automated code review, and data pipelines
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {/* PDF Chatbot */}
+            <motion.div variants={staggerItem}>
+              <TiltCard className="h-full">
+                <Card className="bg-card border-border overflow-hidden hover:border-primary transition-all duration-500 group h-full">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src="/PDFCHAT.png"
+                      alt="PDF Chatbot"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">PDF Chatbot</h3>
+                    <p className="text-muted-foreground mb-4 line-clamp-2">
+                      A local RAG-based PDF chatbot powered by Ollama — chat with your documents privately, no cloud required.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {["RAG", "Ollama", "LLM", "Python"].map((tag, i) => (
+                        <Badge key={i} variant="secondary">{tag}</Badge>
+                      ))}
+                    </div>
+                    <div className="flex gap-2">
+                      <Button asChild size="sm" className="flex-1">
+                        <a href="https://github.com/DaniyalFarrukh/pdf-chatbot-ollama_local" target="_blank" rel="noopener noreferrer">
+                          <Github size={16} className="mr-2" />
+                          GitHub
+                        </a>
+                      </Button>
+                      <Button asChild size="sm" variant="outline" className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7457170238296485888/" target="_blank" rel="noopener noreferrer">
+                          <Linkedin size={16} className="mr-2" />
+                          LinkedIn
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TiltCard>
+            </motion.div>
+
+            {/* AI PR Reviewer */}
+            <motion.div variants={staggerItem}>
+              <TiltCard className="h-full">
+                <Card className="bg-card border-border overflow-hidden hover:border-primary transition-all duration-500 group h-full">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src="/reviewer.png"
+                      alt="AI PR Reviewer"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">AI PR Reviewer</h3>
+                    <p className="text-muted-foreground mb-4 line-clamp-2">
+                      Automated pull request review system powered by Groq — get instant AI feedback on your code changes.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {["Groq", "GitHub Actions", "AI", "DevOps"].map((tag, i) => (
+                        <Badge key={i} variant="secondary">{tag}</Badge>
+                      ))}
+                    </div>
+                    <div className="flex gap-2">
+                      <Button asChild size="sm" className="flex-1">
+                        <a href="https://github.com/DaniyalFarrukh/pr-reviewer-groq" target="_blank" rel="noopener noreferrer">
+                          <Github size={16} className="mr-2" />
+                          GitHub
+                        </a>
+                      </Button>
+                      <Button asChild size="sm" variant="outline" className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7455404481661255680/" target="_blank" rel="noopener noreferrer">
+                          <Linkedin size={16} className="mr-2" />
+                          LinkedIn
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TiltCard>
+            </motion.div>
+
+            {/* BMI & Health Risk Pipeline */}
+            <motion.div variants={staggerItem}>
+              <TiltCard className="h-full">
+                <Card className="bg-card border-border overflow-hidden hover:border-primary transition-all duration-500 group h-full">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src="/BMI.png"
+                      alt="BMI & Health Risk Pipeline"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">BMI & Health Risk Pipeline</h3>
+                    <p className="text-muted-foreground mb-4 line-clamp-2">
+                      An end-to-end data pipeline for BMI calculation and health risk classification with automated reporting.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {["Python", "Data Pipeline", "ML", "Health"].map((tag, i) => (
+                        <Badge key={i} variant="secondary">{tag}</Badge>
+                      ))}
+                    </div>
+                    <div className="flex gap-2">
+                      <Button asChild size="sm" className="flex-1">
+                        <a href="https://github.com/DaniyalFarrukh/BMI" target="_blank" rel="noopener noreferrer">
+                          <Github size={16} className="mr-2" />
+                          GitHub
+                        </a>
+                      </Button>
+                      <Button asChild size="sm" variant="outline" className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                        <a href="https://www.linkedin.com/in/daniyal-farrukh-b41107262/recent-activity/all/" target="_blank" rel="noopener noreferrer">
+                          <Linkedin size={16} className="mr-2" />
+                          LinkedIn
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TiltCard>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CERTIFICATIONS */}
+      <section id="certifications" className="py-20 bg-card/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Certifi<span className="gradient-text">cations</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Professional certifications validating my technical expertise
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {certifications.map((cert, index) => (
+              <motion.div key={index} variants={staggerItem} whileHover={{ y: -5 }}>
+                <Card className="bg-card border-border hover:border-primary transition-all duration-300 group h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-14 h-14 bg-muted rounded-xl flex items-center justify-center flex-shrink-0 p-2">
+                        <img src={cert.icon} alt={cert.issuer} className="w-full h-full object-contain" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold group-hover:text-primary transition-colors leading-tight">{cert.title}</h3>
+                        <p className="text-muted-foreground text-sm mt-1">{cert.issuer}</p>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground text-sm mb-5 leading-relaxed">{cert.description}</p>
+                    <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full">
+                      <a
+                        href={cert.badgeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <Shield size={16} />
+                        View Certificate
+                        <ExternalLink size={14} className="ml-auto" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       <ContactForm />
 
