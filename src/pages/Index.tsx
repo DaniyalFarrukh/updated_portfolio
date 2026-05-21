@@ -140,15 +140,15 @@ const Index: React.FC = () => {
 
   const skills = [
     { icon: Code, title: "Website Development", description: "Creating responsive and modern web applications" },
-    { icon: Video, title: "App Development", description: "Building mobile and web applications" },
+    { icon: Video, title: "AI Development", description: "Building intelligent applications with AI/ML" },
     { icon: Cloud, title: "Website Hosting", description: "Deploying and managing web applications" },
   ];
 
   const socials = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/daniyal-farrukh-b41107262/" },
     { icon: Github, href: "https://github.com/DaniyalFarrukh" },
-    { icon: Youtube, href: "https://www.youtube.com/@TEAMDMF69" },
-    { icon: Phone, href: "tel:03284552495" },
+    { icon: Youtube, href: "https://www.youtube.com/@DxaniX3" },
+    { icon: Phone, href: "tel:03154390301" },
   ];
 
   return (
@@ -307,9 +307,10 @@ const Index: React.FC = () => {
                   About <span className="gradient-text">me</span>
                 </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  As a BSCS graduate, I develop modern web applications, apply strong Software Quality
-                  Assurance principles, and bring hands-on experience in Data Quality Control to ensure
-                  reliable and high-performing solutions and have hands on experience using AWS Services.
+                  AI Data Engineer specializing in full-stack development, cloud infrastructure, and AI/ML pipelines. Experienced in AWS, Azure, DevOps, and building end-to-end data solutions.
+                    Previously worked as a Data Quality Analyst at Country Survey & Mapping Services Pvt. Ltd., ensuring GIS data accuracy and compliance with project standards.
+                    Bachelor of Computer Science graduate from the University of Central Punjab. Currently building open-source AI tools including an AI-powered PR reviewer using Groq's LLaMA 3 — a free alternative to CodeRabbit.
+                    Passionate about automating workflows, building scalable cloud infrastructure, and making AI accessible to every developer.
                 </p>
               </div>
               <div className="space-y-4">
@@ -322,7 +323,7 @@ const Index: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold">BSCS - University of Central Punjab</h4>
-                    <p className="text-muted-foreground">Graduated in 2025</p>
+                    <p className="text-muted-foreground">Graduated in 2026</p>
                   </div>
                 </motion.div>
               </div>
