@@ -1,0 +1,15 @@
+About Daniyal Farrukh
+=====================
+
+Daniyal Farrukh is an AI Engineer and Full-Stack Developer based in Lahore, Pakistan.
+He graduated with a Bachelor of Science in Computer Science (BSCS) from the University of Central Punjab in 2025.
+He currently works at Aidx Solutions where his role spans AI/ML systems, data engineering, and web development.
+
+GitHub: https://github.com/DaniyalFarrukh
+Portfolio: https://updated-portfolio-smoky-chi.vercel.app
+
+He is passionate about building end-to-end AI systems, cloud infrastructure, and full-stack applications.
+He learns best through hands-on projects and regularly pushes work to GitHub.
+
+Personal interests include gaming, anime-style digital art, and creative tools.
+He primarily works on Windows with PowerShell and VS Code.
