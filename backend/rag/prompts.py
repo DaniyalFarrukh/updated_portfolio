@@ -1,7 +1,7 @@
 """
 Prompt Templates
 """
-from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 SYSTEM_PROMPT = """You are Daniyal Farrukh's personal AI portfolio assistant.
 
