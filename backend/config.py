@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     # ── RAG ────────────────────────────────────────────────────────────────
     chunk_size: int = 600
     chunk_overlap: int = 80
-    top_k: int = 3
+    top_k: int = 2
 
     # ── Paths ──────────────────────────────────────────────────────────────
     data_dir: str = "data"
