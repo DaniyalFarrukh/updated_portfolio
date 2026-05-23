@@ -6,15 +6,15 @@ import os
 class Settings(BaseSettings):
     # ── Gemini ─────────────────────────────────────────────────────────────
     gemini_api_key: str
-    gemini_model: str = "gemini-1.5-flash"          # swap to gemini-1.5-pro anytime
+    gemini_model: str = "gemini-2.0-flash-lite"
 
     # ── Embeddings ─────────────────────────────────────────────────────────
-    embedding_model: str = "all-MiniLM-L6-v2"       # fast, free, no API key needed
+    embedding_model: str = "all-MiniLM-L6-v2"
 
     # ── RAG ────────────────────────────────────────────────────────────────
     chunk_size: int = 600
     chunk_overlap: int = 80
-    top_k: int = 5                                   # retrieved chunks per query
+    top_k: int = 3
 
     # ── Paths ──────────────────────────────────────────────────────────────
     data_dir: str = "data"
@@ -22,7 +22,7 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
-        extra="allow"
+        extra = "allow"
 
 
 @lru_cache
