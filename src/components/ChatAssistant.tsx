@@ -32,6 +32,7 @@ interface ApiHistoryMessage {
 const STORAGE_KEY = "daniyal_chat_history_v2";
 const MAX_HISTORY = 40;
 const API_BASE_URL = import.meta.env.VITE_RAG_API_URL; // e.g. https://your-app.railway.app
+console.log("API URL:", API_BASE_URL);
 
 const WELCOME_MESSAGE: Message = {
   id: "welcome",
