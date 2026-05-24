@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 def _build_llm(streaming: bool = True) -> ChatGroq:
     settings = get_settings()
     return ChatGroq(
-        model="llama3-8b-8192",
+        model=settings.groq_model,
         api_key=settings.groq_api_key,
         streaming=streaming,
         temperature=0.1,
