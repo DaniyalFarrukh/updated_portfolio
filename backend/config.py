@@ -1,12 +1,11 @@
 from pydantic_settings import BaseSettings
 from functools import lru_cache
-import os
 
 
 class Settings(BaseSettings):
-    # ── Gemini ─────────────────────────────────────────────────────────────
-    gemini_api_key: str
-    gemini_model: str = "gemini-2.0-flash-lite"
+    # ── Groq ───────────────────────────────────────────────────────────────
+    groq_api_key: str = ""
+    groq_model: str = "llama3-8b-8192"
 
     # ── Embeddings ─────────────────────────────────────────────────────────
     embedding_model: str = "all-MiniLM-L6-v2"

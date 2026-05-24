@@ -12,3 +12,4 @@ pypdf
 sse-starlette
 httpx
 python-dotenv
+langchain-groq

@@ -1,6 +1,6 @@
 import logging
 from typing import AsyncGenerator, List
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage, AIMessage
 from rag.vectordb.store import VectorStore
 from rag.prompts import RAG_PROMPT
@@ -9,21 +9,20 @@ from config import get_settings
 logger = logging.getLogger(__name__)
 
 
-def _build_llm(streaming: bool = True) -> ChatGoogleGenerativeAI:
+def _build_llm(streaming: bool = True) -> ChatGroq:
     settings = get_settings()
-    return ChatGoogleGenerativeAI(
-        model=settings.gemini_model,
-        google_api_key=settings.gemini_api_key,
+    return ChatGroq(
+        model="llama3-8b-8192",
+        api_key=settings.groq_api_key,
         streaming=streaming,
         temperature=0.1,
-        max_tokens=512,   # limit output tokens
-        convert_system_message_to_human=True,
+        max_tokens=512,
     )
 
 
 def _format_history(history: List[dict]) -> list:
     messages = []
-    for msg in history[-4:]:  # only last 2 turns to save tokens
+    for msg in history[-4:]:
         if msg["role"] == "user":
             messages.append(HumanMessage(content=msg["content"]))
         elif msg["role"] == "assistant":
@@ -38,7 +37,6 @@ def _retrieve_context(question: str) -> tuple[str, List[str]]:
     sources = []
     for i, doc in enumerate(docs, 1):
         source = doc.metadata.get("source", "unknown")
-        # Truncate each chunk to 300 chars to save tokens
         content = doc.page_content[:300]
         context_parts.append(f"[{i}] {content}")
         if source not in sources:
